@@ -1,0 +1,36 @@
+AOP:面向切面编程，面向规则编程，将一系列同样业务规则的代码，放在一起组成一个面。
+  <aop:config>
+    <aop:aspect id="rule" ref="ruleHandler">
+        <aop:pointcut id="all" expression="execution(* com.sss.aop.rule.*(..))" />
+        <aop:before method="checkRule" pointcut-ref="all" />
+        <aop:after method="printResult" pointcut-ref="all" />
+     </aop:aspect>
+  </aop:config>
+  
+IOC:由Spring来控制对象的创建，Spring将创建的对象保存在一个IOC容器中。
+  在配置文件中设置初始化扫描的包路径，通过注解@Component来扫描java bean。
+  @Component
+  public class Question {
+
+    private String userName;
+    private String content;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+}
+
+DI：Dependency Lookup依赖注入，当需要调用某个类时，从ICO容器中直接取出来。
+
