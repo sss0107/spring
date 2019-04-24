@@ -33,4 +33,11 @@ IOC:由Spring来控制对象的创建，Spring将创建的对象保存在一个I
 }
 
 DI：Dependency Lookup依赖注入，当需要调用某个类时，从ICO容器中直接取出来。
+@RestController
+public class TeacherController {
 
+    @Autowired
+    private Question question;
+
+   
+}
